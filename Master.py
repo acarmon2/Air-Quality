@@ -75,5 +75,4 @@ if(a):
                     print D0
                 else:
                     print "Error in communication"
-                #ser.flushInput()
-                #ser.flushOutput()
+
