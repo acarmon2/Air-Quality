@@ -17,7 +17,8 @@ def silence():
     finally:
         sys.stdout = old_target
 
-# Function to init the hardware, xbee module
+# Function to init the hardware, xbee module. COM# for Windows system and /dev/ttyAMC(A)# for the 
+# Linux case
 def init():
     try:
         ser = serial.Serial('COM11', baudrate = 9600, timeout = 3)
@@ -58,7 +59,8 @@ for k in range(1, 11):
             time.sleep(2)
             print "Trying to connect the hardware " + str(k) + " of 10"
 
-# if hardware is ready create the file to save the data
+# if hardware is ready create the file to save the data. The system create a file with the OPCN_2 and time begining of the
+# receiver frame
 if(a):
         t0 = datetime.datetime.now()
         Name = 'OPCN2_'+str(t0.year)+'_'+str(t0.month)+'_'+str(t0.day)+'_'+str(t0.hour)+'_'+str(t0.minute)+'_'+str(t0.second)+'.txt'
